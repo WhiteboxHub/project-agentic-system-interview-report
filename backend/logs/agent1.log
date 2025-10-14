@@ -1,0 +1,17 @@
+2025-10-15 01:15:45,386 - INFO - Processing job URL: https://job-boards.greenhouse.io/prophecysimpledatalabs/jobs/4876131007
+2025-10-15 01:15:52,601 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-15 01:15:52,616 - INFO - Output saved to /Users/ip-mac/Desktop/agentic-system/backend/app/../data/job_descriptions/output.json
+2025-10-15 01:20:20,285 - INFO - Processing job URL: https://job-boards.greenhouse.io/prophecysimpledatalabs/jobs/4876131007
+2025-10-15 01:20:26,924 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-15 01:20:26,940 - INFO - Output saved to /Users/ip-mac/Desktop/agentic-system/backend/app/../data/job_descriptions/output.json
+2025-10-15 01:21:56,500 - INFO - Processing job URL: https://job-boards.greenhouse.io/prophecysimpledatalabs/jobs/4876131007
+2025-10-15 01:22:04,301 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-15 01:22:04,329 - INFO - Output saved to /Users/ip-mac/Desktop/agentic-system/backend/app/../data/job_descriptions/output.json
+2025-10-15 01:23:12,451 - INFO - Processing job URL: https://job-boards.greenhouse.io/prophecysimpledatalabs/jobs/4876131007
+2025-10-15 01:23:19,401 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-15 01:23:19,415 - INFO - Output saved to /Users/ip-mac/Desktop/agentic-system/backend/app/../data/job_descriptions/output.json
+2025-10-15 02:32:49,839 - INFO - Processing job URL: https://job-boards.greenhouse.io/prophecysimpledatalabs/jobs/4876131007
+2025-10-15 02:32:51,018 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 520 "
+2025-10-15 02:32:51,019 - INFO - Retrying request to /chat/completions in 0.390922 seconds
+2025-10-15 02:33:05,070 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-15 02:33:05,093 - INFO - Output saved to /Users/ip-mac/Desktop/agentic-system/backend/app/../data/job_descriptions/output.json
