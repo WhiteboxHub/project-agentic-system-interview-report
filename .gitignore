@@ -1,0 +1,13 @@
+# Ignore virtual environment
+myvenv/
+
+# Ignore environment files
+*.env
+# macOS system file
+.DS_Store
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+
