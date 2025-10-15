@@ -4,3 +4,9 @@ requests
 beautifulsoup4
 python-dotenv
 openai
+
+
+pdfplumber
+docx2txt
+openai
+docx

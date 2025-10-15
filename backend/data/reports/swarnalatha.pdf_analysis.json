@@ -1,0 +1,47 @@
+{
+    "Key Skills Required": {
+        "Hands-on LLM/agent building": "Proficient",
+        "Semantic search": "Proficient",
+        "RAG": "Proficient",
+        "Vector databases": "Proficient",
+        "Prompt engineering and optimization": "Proficient",
+        "Fluency in Python": "Proficient",
+        "REST APIs": "Proficient",
+        "Microservices in public cloud": "Proficient"
+    },
+    "Matching Strengths": {
+        "Hands-on LLM/agent building": "Developed AI-powered chatbots using Generative AI and Large Language Models.",
+        "RAG": "Implemented Retrieval-Augmented Generation (RAG) pipelines using vector databases.",
+        "Vector databases": "Experience with Pinecone and Milvus for enhancing response relevance.",
+        "Fluency in Python": "Extensive experience in Python for AI/ML development.",
+        "REST APIs": "Developed and integrated RESTful APIs for real-time inference.",
+        "Microservices in public cloud": "Deployed scalable AI solutions on AWS, including using Docker and Kubernetes."
+    },
+    "Missing / Less-Emphasized Skills": {
+        "Semantic search": "No specific mention of experience with semantic search techniques.",
+        "Prompt engineering and optimization": "Limited details on prompt engineering and optimization.",
+        "Microservices in public cloud": "Experience noted but could be more detailed regarding microservices architecture."
+    },
+    "Interview Preparation Guidance": {
+        "Suggested self-introduction points": [
+            "Background in AI/ML engineering with a focus on developing LLM-based solutions.",
+            "Experience in building and deploying agentic workflows and chatbots.",
+            "Proficient in using cloud technologies, particularly AWS, for scalable AI solutions."
+        ],
+        "Likely interview questions": [
+            "Can you describe a project where you built an agent using LLMs?",
+            "How have you implemented RAG in your previous projects?",
+            "What strategies do you use for optimizing prompts in AI models?"
+        ],
+        "Recommended talking points": [
+            "Discuss your experience with LangChain and how it relates to agentic workflows.",
+            "Explain your approach to integrating external APIs and knowledge sources.",
+            "Share examples of how you've collaborated with cross-functional teams to align AI solutions with business needs."
+        ],
+        "Questions to ask the interviewer": [
+            "What are the main challenges the team is currently facing with agentic workflows?",
+            "Can you describe the typical use cases for agents that the team is working on?",
+            "How does Prophecy measure the success of its AI implementations?"
+        ]
+    }
+}

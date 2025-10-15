@@ -11,8 +11,7 @@
         "Prompt engineering and optimization": "Proficient",
         "Fluency in Python": "Proficient",
         "REST APIs": "Proficient",
-        "Microservices in public cloud": "Proficient",
-        "Some experience with Go, AWS, k8s, Java, Scala": "Basic"
+        "Microservices in public cloud": "Proficient"
     },
     "Responsibilities": [
         "Building and deploying agents for various use cases",
@@ -21,8 +20,8 @@
         "Querying, manipulating, or analyzing data across sources",
         "Tailoring recommendations or plans for personalized assistance",
         "Making real-time decisions in various domains",
-        "Generating text, art, or media for content creation",
-        "Collaborating agents for simulations or transactions"
+        "Generating text, art, or media",
+        "Collaborating with multi-agent systems for simulations or transactions"
     ],
     "Nice-to-Have Skills": [
         "ML/LLM work in code generation",
@@ -42,15 +41,12 @@
         "Pinecone",
         "Neo4j",
         "Neptune",
-        "Spark",
-        "Hugging Face",
-        "PyTorch"
+        "AWS",
+        "k8s",
+        "Java",
+        "Scala"
     ],
-    "Role Summary": "The Agentic-Workflow MLE at Prophecy will focus on building and deploying agents for various use cases, including workflow orchestration and content creation. The role requires a strong background in machine learning and software development, with an emphasis on automating complex processes and enhancing data integration.",
-    "Key Performance Indicators / Success Metrics": "Not mentioned",
-    "Interview Preparation Notes": "Candidates should be prepared to discuss their hands-on experience with LLMs and agent building, as well as their familiarity with the tools and technologies listed. Demonstrating a builder mentality and experience in taking ideas to production will be beneficial."
+    "Role Summary": "The Agentic-Workflow MLE at Prophecy will focus on building and deploying agents for various use cases, including workflow orchestration and code generation. This role requires hands-on experience with LLM/agent building and a strong foundation in data analysis and transformation.",
+    "Key Performance Indicators / Success Metrics": "Not explicitly mentioned.",
+    "Interview Preparation Notes": "Candidates should be prepared to discuss their hands-on experience with LLM/agent building, as well as their familiarity with various use cases and technologies mentioned in the job description."
 }
-
-
-
-
