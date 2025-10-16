@@ -5,9 +5,9 @@ beautifulsoup4
 python-dotenv
 openai
 docling==2.57.0
-
-
 pdfplumber
 docx2txt
-openai
 docx
+pdfkit
+jinja2
+lxml

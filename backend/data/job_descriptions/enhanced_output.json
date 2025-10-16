@@ -1,0 +1,108 @@
+{
+    "BASIC_INFORMATION": {
+        "Job_Title": "LLM/Agent Developer",
+        "Company_Name": "Prophecy",
+        "Location": {
+            "City": "Not specified",
+            "State": "Not specified",
+            "Country": "Not specified",
+            "Remote": "Not specified"
+        },
+        "Experience_Level": "Mid to Staff Level",
+        "Employment_Type": "Full-time",
+        "Salary_Range": "$250,000–$350,000"
+    },
+    "TECHNICAL_REQUIREMENTS": {
+        "Required_Skills": [
+            "Hands-on LLM/agent building",
+            "Tuning to quality benchmarks",
+            "Semantic search",
+            "RAG",
+            "Vector databases",
+            "Prompt engineering and optimization",
+            "Fluency in Python",
+            "REST APIs",
+            "Microservices in public cloud"
+        ],
+        "Nice_to_Have_Skills": [
+            "ML/LLM work in code generation",
+            "Semantic extraction",
+            "Knowledge graphs",
+            "Experience with big-data engines like Spark",
+            "Compiler development for languages like SQL, Python, or Scala",
+            "Optimization of ML models for low-latency, high-throughput production use",
+            "Contributions to open-source AI/ML projects",
+            "Expertise in retrieval systems or vector databases",
+            "Skill in evaluating tech and driving build/buy decisions"
+        ],
+        "Tools_Technologies": [
+            "LangChain",
+            "Graph",
+            "CrewAI",
+            "Weaviate",
+            "Pinecone",
+            "Neo4j",
+            "Neptune"
+        ],
+        "Certifications_Required": "None specified",
+        "Years_of_Experience_Required": "3+ years"
+    },
+    "ROLE_DETAILS": {
+        "Key_Responsibilities": [
+            "Building and deploying agents for various use cases",
+            "Automating multi-step processes",
+            "Developing or debugging code autonomously",
+            "Querying, manipulating, or analyzing data",
+            "Tailoring recommendations or plans",
+            "Real-time decision-making in specific domains",
+            "Generating text, art, or media",
+            "Collaborating in multi-agent systems"
+        ],
+        "Daily_Tasks": "Not explicitly mentioned",
+        "Team_Structure": "Not explicitly mentioned",
+        "Reporting_Structure": "Not explicitly mentioned",
+        "Growth_Opportunities": "End-to-end ownership of projects"
+    },
+    "COMPANY_INFORMATION": {
+        "Company_Size": "Not specified",
+        "Industry": "Data Integration, AI, Analytics",
+        "Company_Culture_Values": "Inclusive culture, merit-based hiring",
+        "Mission_Statement": "To simplify and automate data preparation for AI and analytics",
+        "Benefits_Perks": [
+            "99% coverage of employee health insurance",
+            "75% coverage for dependents",
+            "$200/month wellness reimbursement",
+            "Birthday and anniversary day off",
+            "Flexible PTO",
+            "$500 professional development reimbursement",
+            "Company sponsored Long Term Disability and Life Insurance",
+            "FSA/HSA"
+        ],
+        "Work_Environment": "Innovative platform with a focus on ownership and contribution"
+    },
+    "INTERVIEW_PREPARATION_INSIGHTS": {
+        "Likely_Technical_Interview_Topics": [
+            "LLM/agent building",
+            "Data integration techniques",
+            "Prompt engineering",
+            "Semantic search"
+        ],
+        "Behavioral_Questions_to_Expect": "Not explicitly mentioned",
+        "Skills_Assessment_Areas": [
+            "Programming proficiency",
+            "Problem-solving abilities",
+            "Experience with relevant tools and technologies"
+        ],
+        "Portfolio_Project_Requirements": "Not explicitly mentioned",
+        "Key_Metrics_KPIs_for_Success": "Not explicitly mentioned"
+    },
+    "CANDIDATE_PROFILE": {
+        "Ideal_Candidate_Description": "Versatile software developer with a builder mentality",
+        "Educational_Requirements": "Not specified",
+        "Soft_Skills_Needed": "Not specified",
+        "Leadership_Requirements": "Not specified",
+        "Communication_Skills": "Not specified"
+    },
+    "scraped_at": "",
+    "source_url": "https://job-boards.greenhouse.io/prophecysimpledatalabs/jobs/4876131007"
+}

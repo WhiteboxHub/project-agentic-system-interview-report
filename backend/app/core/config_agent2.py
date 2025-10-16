@@ -1,3 +1,4 @@
+# project-agentic-system-interview-report/backend/app/core/config_agent2.py
 import os
 from dotenv import load_dotenv
 
@@ -5,8 +6,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-# Load OpenAI API key from environment variable
-# OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 # Base directories
 # Set backend root as base directory (one level up from 'app')
