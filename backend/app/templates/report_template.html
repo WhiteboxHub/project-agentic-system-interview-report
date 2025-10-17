@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      {{ resume.get('Candidate Name', 'Candidate') }} - Comprehensive Interview
+      Preparation Report
+    </title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 20px;
+        line-height: 1.6;
+        background-color: #f8f9fa;
+        color: #333;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #2f5496;
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 2.5em;
+        border-bottom: 3px solid #2f5496;
+        padding-bottom: 20px;
+      }
+      h2 {
+        margin-top: 40px;
+        border-bottom: 2px solid #2f5496;
+        padding-bottom: 10px;
+        color: #2f5496;
+        font-size: 1.8em;
+      }
+      h3 {
+        color: #34495e;
+        margin-top: 30px;
+        font-size: 1.4em;
+      }
+      h4 {
+        color: #7f8c8d;
+        margin-top: 25px;
+        font-size: 1.2em;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 25px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+      th {
+        background-color: #2f5496;
+        color: white;
+        padding: 12px;
+        text-align: left;
+        font-weight: bold;
+      }
+      td {
+        padding: 12px;
+        text-align: left;
+        vertical-align: top;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      ul {
+        margin: 0 0 20px 20px;
+        padding-left: 0;
+      }
+      li {
+        margin-bottom: 8px;
+        padding-left: 5px;
+      }
+      .section {
+        margin-bottom: 30px;
+        padding: 20px;
+        border-left: 4px solid #2f5496;
+        background-color: #f8f9fa;
+      }
+      .highlight {
+        background-color: #fff3cd;
+        padding: 15px;
+        border-radius: 5px;
+        border-left: 4px solid #ffc107;
+        margin: 15px 0;
+      }
+      .warning {
+        background-color: #f8d7da;
+        padding: 15px;
+        border-radius: 5px;
+        border-left: 4px solid #dc3545;
+        margin: 15px 0;
+      }
+      .success {
+        background-color: #d4edda;
+        padding: 15px;
+        border-radius: 5px;
+        border-left: 4px solid #28a745;
+        margin: 15px 0;
+      }
+      .small {
+        font-size: 0.9em;
+        color: #6c757d;
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #dee2e6;
+      }
+      .match-percentage {
+        font-size: 2em;
+        font-weight: bold;
+        color: #28a745;
+        text-align: center;
+        margin: 20px 0;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+      .two-column {
+        display: flex;
+        gap: 20px;
+      }
+      .column {
+        flex: 1;
+      }
+      @media print {
+        body {
+          background-color: white;
+        }
+        .container {
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Comprehensive Interview Preparation Report</h1>
+
+      <!-- Executive Summary -->
+      <div class="section">
+        <h2>📊 Executive Summary</h2>
+        {% if resume.get("EXECUTIVE_SUMMARY",
+        {}).get("Overall_Match_Percentage") %}
+        <div class="match-percentage">
+          Match Score: {{ resume.get("EXECUTIVE_SUMMARY",
+          {}).get("Overall_Match_Percentage", "N/A") }}%
+        </div>
+        {% endif %}
+
+        <div class="highlight">
+          <h3>Key Strengths</h3>
+          <ul>
+            {% for strength in resume.get("EXECUTIVE_SUMMARY",
+            {}).get("Key_Strengths_Summary", []) %}
+            <li>{{ strength }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="warning">
+          <h3>Areas of Concern</h3>
+          <ul>
+            {% for concern in resume.get("EXECUTIVE_SUMMARY",
+            {}).get("Primary_Concerns_Gaps", []) %}
+            <li>{{ concern }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="success">
+          <h3>Focus Areas</h3>
+          <ul>
+            {% for area in resume.get("EXECUTIVE_SUMMARY",
+            {}).get("Recommended_Preparation_Focus_Areas", []) %}
+            <li>{{ area }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Job Overview -->
+      <div class="section">
+        <h2>🎯 Job Overview</h2>
+        <table>
+          <tr>
+            <th>Position</th>
+            <td>
+              {{ job.get("BASIC_INFORMATION", {}).get("Job_Title", "N/A") }}
+            </td>
+          </tr>
+          <tr>
+            <th>Company</th>
+            <td>
+              {{ job.get("BASIC_INFORMATION", {}).get("Company_Name", "N/A") }}
+            </td>
+          </tr>
+          <tr>
+            <th>Location</th>
+            <td>
+              {{ job.get("BASIC_INFORMATION", {}).get("Location",
+              {}).get("City", "N/A") }}, {{ job.get("BASIC_INFORMATION",
+              {}).get("Location", {}).get("State", "N/A") }}
+            </td>
+          </tr>
+          <tr>
+            <th>Experience Level</th>
+            <td>
+              {{ job.get("BASIC_INFORMATION", {}).get("Experience_Level", "N/A")
+              }}
+            </td>
+          </tr>
+          <tr>
+            <th>Employment Type</th>
+            <td>
+              {{ job.get("BASIC_INFORMATION", {}).get("Employment_Type", "N/A")
+              }}
+            </td>
+          </tr>
+          <tr>
+            <th>Salary Range</th>
+            <td>
+              {{ job.get("BASIC_INFORMATION", {}).get("Salary_Range", "N/A") }}
+            </td>
+          </tr>
+        </table>
+
+        <h3>Role Summary</h3>
+        <p>
+          {{ job.get("ROLE_DETAILS", {}).get("Key_Responsibilities", ["N/A"])[0]
+          if job.get("ROLE_DETAILS", {}).get("Key_Responsibilities") else "N/A"
+          }}
+        </p>
+      </div>
+
+      <!-- Skills Analysis -->
+      <div class="section">
+        <h2>🔧 Skills Analysis</h2>
+
+        <h3>Required Skills Assessment</h3>
+        <table>
+          <tr>
+            <th>Skill</th>
+            <th>Status</th>
+            <th>Notes</th>
+          </tr>
+          {% for skill, status in resume.get("SKILLS_ANALYSIS",
+          {}).get("Required_Skills_Assessment", {}).items() %}
+          <tr>
+            <td>{{ skill }}</td>
+            <td>{{ status }}</td>
+            <td>Assessment notes</td>
+          </tr>
+          {% endfor %}
+        </table>
+
+        <h3>Technical Skills Gap Analysis</h3>
+        <ul>
+          {% for gap_key, gap_value in resume.get("SKILLS_ANALYSIS",
+          {}).get("Technical_Skills_Gap_Analysis", {}).items() %}
+          <li><strong>{{ gap_key }}:</strong> {{ gap_value }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Personalized Introduction Strategy -->
+      <div class="section">
+        <h2>🎤 Personalized Introduction Strategy</h2>
+
+        <h3>30-Second Elevator Pitch</h3>
+        <div class="highlight">
+          <p>
+            {{ resume.get("PERSONALIZED_INTRODUCTION_STRATEGY",
+            {}).get("30-Second_Elevator_Pitch_Template", "Template not
+            available") }}
+          </p>
+        </div>
+
+        <h3>2-Minute Detailed Introduction</h3>
+        <p>
+          {{ resume.get("PERSONALIZED INTRODUCTION STRATEGY", {}).get("2-Minute
+          Detailed Introduction", "Detailed introduction not available") }}
+        </p>
+
+        <h3>Key Value Propositions</h3>
+        <ul>
+          {% for prop in resume.get("PERSONALIZED INTRODUCTION STRATEGY",
+          {}).get("Key Value Propositions to Highlight", []) %}
+          <li>{{ prop }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Technical Preparation -->
+      <div class="section">
+        <h2>💻 Technical Preparation</h2>
+
+        <h3>Skills to Brush Up On</h3>
+        <ul>
+          {% for skill in resume.get("TECHNICAL PREPARATION", {}).get("Technical
+          Skills to Brush Up On", []) %}
+          <li>{{ skill }}</li>
+          {% endfor %}
+        </ul>
+
+        <h3>Coding Challenges to Practice</h3>
+        <ul>
+          {% for challenge in resume.get("TECHNICAL PREPARATION",
+          {}).get("Coding Challenges to Practice", []) %}
+          <li>{{ challenge }}</li>
+          {% endfor %}
+        </ul>
+
+        <h3>System Design Topics</h3>
+        <ul>
+          {% for topic in resume.get("TECHNICAL PREPARATION", {}).get("System
+          Design Topics", []) %}
+          <li>{{ topic }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Interview Questions Bank -->
+      <div class="section">
+        <h2>❓ Interview Questions Bank</h2>
+
+        <div class="two-column">
+          <div class="column">
+            <h3>Technical Questions</h3>
+            <ul>
+              {% for q in resume.get("INTERVIEW QUESTIONS BANK",
+              {}).get("Technical Questions", []) %}
+              <li>{{ q }}</li>
+              {% endfor %}
+            </ul>
+
+            <h3>Behavioral Questions</h3>
+            <ul>
+              {% for q in resume.get("INTERVIEW QUESTIONS BANK",
+              {}).get("Behavioral Questions", []) %}
+              <li>{{ q }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <div class="column">
+            <h3>Company-Specific Questions</h3>
+            <ul>
+              {% for q in resume.get("INTERVIEW QUESTIONS BANK",
+              {}).get("Company-Specific Questions", []) %}
+              <li>{{ q }}</li>
+              {% endfor %}
+            </ul>
+
+            <h3>Role-Specific Questions</h3>
+            <ul>
+              {% for q in resume.get("INTERVIEW QUESTIONS BANK",
+              {}).get("Role-Specific Questions", []) %}
+              <li>{{ q }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Questions to Ask Interviewer -->
+      <div class="section">
+        <h2>🤔 Questions to Ask Interviewer</h2>
+
+        <div class="two-column">
+          <div class="column">
+            <h3>Technical Questions</h3>
+            <ul>
+              {% for q in resume.get("QUESTIONS TO ASK INTERVIEWER",
+              {}).get("Technical Questions", []) %}
+              <li>{{ q }}</li>
+              {% endfor %}
+            </ul>
+
+            <h3>Team & Culture Questions</h3>
+            <ul>
+              {% for q in resume.get("QUESTIONS TO ASK INTERVIEWER",
+              {}).get("Team & Culture Questions", []) %}
+              <li>{{ q }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <div class="column">
+            <h3>Growth & Development Questions</h3>
+            <ul>
+              {% for q in resume.get("QUESTIONS TO ASK INTERVIEWER",
+              {}).get("Growth & Development Questions", []) %}
+              <li>{{ q }}</li>
+              {% endfor %}
+            </ul>
+
+            <h3>Role-Specific Questions</h3>
+            <ul>
+              {% for q in resume.get("QUESTIONS TO ASK INTERVIEWER",
+              {}).get("Role-Specific Questions", []) %}
+              <li>{{ q }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Keywords & Phrases -->
+      <div class="section">
+        <h2>🔑 Keywords & Phrases to Use</h2>
+
+        <h3>Technical Keywords</h3>
+        <ul>
+          {% for keyword in resume.get("KEYWORDS & PHRASES", {}).get("Technical
+          Keywords to Use", []) %}
+          <li>{{ keyword }}</li>
+          {% endfor %}
+        </ul>
+
+        <h3>Industry-Specific Terms</h3>
+        <ul>
+          {% for term in resume.get("KEYWORDS & PHRASES",
+          {}).get("Industry-Specific Terms", []) %}
+          <li>{{ term }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Red Flags & Concerns -->
+      <div class="section">
+        <h2>⚠️ Red Flags & Concerns</h2>
+
+        <div class="warning">
+          <h3>Potential Weaknesses to Address</h3>
+          <ul>
+            {% for weakness in resume.get("RED FLAGS & CONCERNS",
+            {}).get("Potential Weaknesses to Address", []) %}
+            <li>{{ weakness }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <h3>Gaps to Explain Proactively</h3>
+        <ul>
+          {% for gap in resume.get("RED FLAGS & CONCERNS", {}).get("Gaps to
+          Explain Proactively", []) %}
+          <li>{{ gap }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Success Strategies -->
+      <div class="section">
+        <h2>🎯 Success Strategies</h2>
+
+        <h3>Interview Day Preparation</h3>
+        <ul>
+          {% for strategy in resume.get("SUCCESS STRATEGIES", {}).get("Interview
+          Day Preparation", []) %}
+          <li>{{ strategy }}</li>
+          {% endfor %}
+        </ul>
+
+        <h3>Body Language Tips</h3>
+        <ul>
+          {% for tip in resume.get("SUCCESS STRATEGIES", {}).get("Body Language
+          Tips", []) %}
+          <li>{{ tip }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Company Research Points -->
+      <div class="section">
+        <h2>🏢 Company Research Points</h2>
+
+        <h3>Recent Company News</h3>
+        <ul>
+          {% for news in resume.get("COMPANY RESEARCH POINTS", {}).get("Recent
+          Company News", []) %}
+          <li>{{ news }}</li>
+          {% endfor %}
+        </ul>
+
+        <h3>Products/Services to Mention</h3>
+        <ul>
+          {% for product in resume.get("COMPANY RESEARCH POINTS",
+          {}).get("Products/Services to Mention", []) %}
+          <li>{{ product }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Role-Specific Preparation -->
+      <div class="section">
+        <h2>🎯 Role-Specific Preparation</h2>
+
+        <h3>Daily Responsibilities Understanding</h3>
+        <ul>
+          {% for resp in resume.get("ROLE-SPECIFIC PREPARATION", {}).get("Daily
+          Responsibilities Understanding", []) %}
+          <li>{{ resp }}</li>
+          {% endfor %}
+        </ul>
+
+        <h3>Tools & Processes to Learn</h3>
+        <ul>
+          {% for tool in resume.get("ROLE-SPECIFIC PREPARATION", {}).get("Tools
+          & Processes to Learn", []) %}
+          <li>{{ tool }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="small">
+        <p>Generated with Enhanced Agentic Interview Preparation System</p>
+        <p>Report generated on: {{ job.get("scraped_at", "N/A") }}</p>
+      </div>
+    </div>
+  </body>
+</html>

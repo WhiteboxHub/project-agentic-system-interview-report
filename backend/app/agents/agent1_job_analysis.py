@@ -1,3 +1,4 @@
+# project-agentic-system-interview-report/backend/app/agents/agent1_job_analysis.py
 import os
 import json
 import re
@@ -12,38 +13,93 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 # Initialize OpenAI client
 client = OpenAI(api_key=OPENAI_API_KEY)
 
+
 def refine_with_openai(structured_data: dict) -> dict:
     """
-    Optional: send Docling output to OpenAI to standardize and enrich JSON.
+    Enhanced OpenAI analysis to extract comprehensive job information.
     """
+    job_text = structured_data.get("job_description", "")
+
     prompt = f"""
-    Here is a structured job description extracted from a job posting:
+    You are an expert job description analyst. Analyze this job posting and extract comprehensive information.
 
-    {json.dumps(structured_data, indent=4)}
+    JOB POSTING TEXT:
+    {job_text}
 
-    Please clean, standardize, and enrich this data. 
-    Return JSON with fields: Job Title, Company, Location, Experience Level, Required Skills, 
-    Nice-to-Have Skills, Responsibilities, Tools & Technologies, Role Summary, KPIs, Interview Notes, Key Challenges, Company Culture & Values, Compensation/Benefits (if mentioned).
-    Make sure the JSON is well-formatted, human-readable, and includes as many details as possible inferred from the job posting. 
-    Do not return markdown code blocks, return plain JSON only.
+    Extract and structure the following information into a detailed JSON format:
+
+    1. BASIC INFORMATION:
+       - Job Title (exact title)
+       - Company Name
+       - Location (city, state, country, remote/hybrid/onsite)
+       - Experience Level (entry/mid/senior/staff/principal)
+       - Employment Type (full-time/part-time/contract)
+       - Salary Range (if mentioned)
+
+    2. TECHNICAL REQUIREMENTS:
+       - Required Skills (programming languages, frameworks, tools)
+       - Nice-to-Have Skills (preferred but not mandatory)
+       - Tools & Technologies (specific software, platforms, systems)
+       - Certifications Required
+       - Years of Experience Required
+
+    3. ROLE DETAILS:
+       - Key Responsibilities (detailed list)
+       - Daily Tasks
+       - Team Structure (who they'll work with)
+       - Reporting Structure
+       - Growth Opportunities
+
+    4. COMPANY INFORMATION:
+       - Company Size
+       - Industry
+       - Company Culture & Values
+       - Mission Statement
+       - Benefits & Perks
+       - Work Environment
+
+    5. INTERVIEW PREPARATION INSIGHTS:
+       - Likely Technical Interview Topics
+       - Behavioral Questions to Expect
+       - Skills Assessment Areas
+       - Portfolio/Project Requirements
+       - Key Metrics/KPIs for Success
+
+    6. CANDIDATE PROFILE:
+       - Ideal Candidate Description
+       - Educational Requirements
+       - Soft Skills Needed
+       - Leadership Requirements
+       - Communication Skills
+
+    Return ONLY valid JSON format. Do not include markdown code blocks or any other text.
     """
     try:
         completion = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
-                {"role": "system", "content": "You are a helpful assistant that formats job data cleanly."},
-                {"role": "user", "content": prompt}
+                {
+                    "role": "system",
+                    "content": "You are a helpful assistant that formats job data cleanly.",
+                },
+                {"role": "user", "content": prompt},
             ],
-            temperature=0.3
+            temperature=0.3,
         )
 
         text_response = completion.choices[0].message.content.strip()
-        cleaned_text = re.sub(r"^```json\s*|\s*```$", "", text_response, flags=re.DOTALL).strip()
+        cleaned_text = re.sub(
+            r"^```json\s*|\s*```$", "", text_response, flags=re.DOTALL
+        ).strip()
 
         return json.loads(cleaned_text)
     except Exception as e:
         logger.error(f"OpenAI refinement failed: {e}")
-        return {"structured_description": structured_data, "note": "OpenAI refinement failed"}
+        return {
+            "structured_description": structured_data,
+            "note": "OpenAI refinement failed",
+        }
+
 
 def process_job_url(job_url: str) -> dict:
     """
@@ -68,6 +124,7 @@ def process_job_url(job_url: str) -> dict:
         logger.error(f"Error processing job URL: {e}")
         return {"error": str(e)}
 
+
 def main():
     print("===== AI Job Description Analyzer =====")
     job_url = input("Enter the Job Posting URL: ").strip()
@@ -79,10 +136,6 @@ def main():
     print("Structured Job Description saved to data/job_description/output.json")
     # print(json.dumps(result, indent=4, ensure_ascii=False))
 
+
 if __name__ == "__main__":
     main()
-
-
-
-
-
