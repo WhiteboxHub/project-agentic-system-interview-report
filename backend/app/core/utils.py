@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from docling.datamodel.document import DoclingDocument
-from backend.app.core.logging import logger
+from .logging import logger
 
 def scrape_job_description(url: str) -> dict:
     """

@@ -2,9 +2,15 @@ import os
 import json
 import re
 from openai import OpenAI
-from backend.app.core.config import OPENAI_API_KEY, OUTPUT_DIR
-from backend.app.core.utils import scrape_job_description
-from backend.app.core.logging import logger
+import os
+import sys
+
+# Add the backend directory to the Python path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+
+from app.core.config import OPENAI_API_KEY, OUTPUT_DIR
+from app.core.utils import scrape_job_description
+from app.core.logging import logger
 
 # Ensure output directory exists
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -81,8 +87,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
