@@ -41,14 +41,15 @@ def regenerate_report():
         print('✅ HTML report regenerated successfully!')
         print(f'📁 Report saved to: {output_path}')
         print(f'📅 Generated on: {current_datetime}')
-        print('👨‍💻 Credits: Hemant and Jafar')
-        print('©️ Copyright: 2024 Enhanced Agentic Interview Preparation System')
+        print('👨‍💻 Credits: Hemant  , Jafar and Karimulla')
+        print('©️ Copyright: 2025 Enhanced Agentic Interview Preparation System')
+        print('-----------------------------9089968mygjghhhhhhhhhem')
 
     except FileNotFoundError as e:
         print(f'❌ Error: {e}')
         print('💡 Make sure the analysis files exist. Run the comprehensive agent first.')
     except Exception as e:
-        print(f'❌ Error: {e}')
+        print(f'❌ Error: {e}') 
 
 if __name__ == "__main__":
     regenerate_report()

@@ -261,15 +261,11 @@
             <td>{{ skill }}</td>
             <td>{{ status }}</td>
             <td>
-              {% if status == "match" %}
-                Strong match - highlight this skill in your responses
-              {% elif status == "partial" %}
-                Partial match - be prepared to discuss your experience level
-              {% elif status == "missing" %}
-                Skill gap - prepare to discuss how you would learn this quickly
-              {% else %}
-                {{ status }}
-              {% endif %}
+              {% if status == "match" %} Strong match - highlight this skill in
+              your responses {% elif status == "partial" %} Partial match - be
+              prepared to discuss your experience level {% elif status ==
+              "missing" %} Skill gap - prepare to discuss how you would learn
+              this quickly {% else %} {{ status }} {% endif %}
             </td>
           </tr>
           {% endfor %}
@@ -292,13 +288,16 @@
         <div class="highlight">
           <p>
             {{ resume.get("PERSONALIZED_INTRODUCTION_STRATEGY",
-            {}).get("30_Second_Elevator_Pitch_Template", "Template not available") }}
+            {}).get("30_Second_Elevator_Pitch_Template", "Template not
+            available") }}
           </p>
         </div>
 
         <h3>2-Minute Detailed Introduction</h3>
         <p>
-          {{ resume.get("PERSONALIZED_INTRODUCTION_STRATEGY", {}).get("2_Minute_Detailed_Introduction", "Detailed introduction not available") }}
+          {{ resume.get("PERSONALIZED_INTRODUCTION_STRATEGY",
+          {}).get("2_Minute_Detailed_Introduction", "Detailed introduction not
+          available") }}
         </p>
 
         <h3>Key Value Propositions</h3>
@@ -316,7 +315,8 @@
 
         <h3>Skills to Brush Up On</h3>
         <ul>
-          {% for skill in resume.get("TECHNICAL_PREPARATION", {}).get("Technical_Skills_to_Brush_Up_On", []) %}
+          {% for skill in resume.get("TECHNICAL_PREPARATION",
+          {}).get("Technical_Skills_to_Brush_Up_On", []) %}
           <li>{{ skill }}</li>
           {% endfor %}
         </ul>
@@ -331,7 +331,8 @@
 
         <h3>System Design Topics</h3>
         <ul>
-          {% for topic in resume.get("TECHNICAL_PREPARATION", {}).get("System_Design_Topics", []) %}
+          {% for topic in resume.get("TECHNICAL_PREPARATION",
+          {}).get("System_Design_Topics", []) %}
           <li>{{ topic }}</li>
           {% endfor %}
         </ul>
@@ -429,7 +430,8 @@
 
         <h3>Technical Keywords</h3>
         <ul>
-          {% for keyword in resume.get("KEYWORDS_PHRASES", {}).get("Technical_Keywords_to_Use", []) %}
+          {% for keyword in resume.get("KEYWORDS_PHRASES",
+          {}).get("Technical_Keywords_to_Use", []) %}
           <li>{{ keyword }}</li>
           {% endfor %}
         </ul>
@@ -459,7 +461,8 @@
 
         <h3>Gaps to Explain Proactively</h3>
         <ul>
-          {% for gap in resume.get("RED_FLAGS_CONCERNS", {}).get("Gaps_to_Explain_Proactively", []) %}
+          {% for gap in resume.get("RED_FLAGS_CONCERNS",
+          {}).get("Gaps_to_Explain_Proactively", []) %}
           <li>{{ gap }}</li>
           {% endfor %}
         </ul>
@@ -471,14 +474,16 @@
 
         <h3>Interview Day Preparation</h3>
         <ul>
-          {% for strategy in resume.get("SUCCESS_STRATEGIES", {}).get("Interview_Day_Preparation", []) %}
+          {% for strategy in resume.get("SUCCESS_STRATEGIES",
+          {}).get("Interview_Day_Preparation", []) %}
           <li>{{ strategy }}</li>
           {% endfor %}
         </ul>
 
         <h3>Body Language Tips</h3>
         <ul>
-          {% for tip in resume.get("SUCCESS_STRATEGIES", {}).get("Body_Language_Tips", []) %}
+          {% for tip in resume.get("SUCCESS_STRATEGIES",
+          {}).get("Body_Language_Tips", []) %}
           <li>{{ tip }}</li>
           {% endfor %}
         </ul>
@@ -490,7 +495,8 @@
 
         <h3>Recent Company News</h3>
         <ul>
-          {% for news in resume.get("COMPANY_RESEARCH_POINTS", {}).get("Recent_Company_News", []) %}
+          {% for news in resume.get("COMPANY_RESEARCH_POINTS",
+          {}).get("Recent_Company_News", []) %}
           <li>{{ news }}</li>
           {% endfor %}
         </ul>
@@ -510,26 +516,40 @@
 
         <h3>Daily Responsibilities Understanding</h3>
         <ul>
-          {% for resp in resume.get("ROLE_SPECIFIC_PREPARATION", {}).get("Daily_Responsibilities_Understanding", []) %}
+          {% for resp in resume.get("ROLE_SPECIFIC_PREPARATION",
+          {}).get("Daily_Responsibilities_Understanding", []) %}
           <li>{{ resp }}</li>
           {% endfor %}
         </ul>
 
         <h3>Tools & Processes to Learn</h3>
         <ul>
-          {% for tool in resume.get("ROLE_SPECIFIC_PREPARATION", {}).get("Tools_Processes_to_Learn", []) %}
+          {% for tool in resume.get("ROLE_SPECIFIC_PREPARATION",
+          {}).get("Tools_Processes_to_Learn", []) %}
           <li>{{ tool }}</li>
           {% endfor %}
         </ul>
       </div>
 
       <div class="small">
-        <p><strong>Generated with Enhanced Agentic Interview Preparation System</strong></p>
-        <p><em>Developed by Hemant and Jafar</em></p>
+        <p>
+          <strong
+            >Generated with Enhanced Agentic Interview Preparation
+            System</strong
+          >
+        </p>
+        <p><em>Developed with ❤️ by Hemant , Jafar and Karimulla'</em></p>
         <p>Report generated on: {{ current_datetime }}</p>
         <p>Job scraped on: {{ job.get("scraped_at", "N/A") }}</p>
-        <p>&copy; 2024 Enhanced Agentic Interview Preparation System. All rights reserved.</p>
+        <!-- <p>&copy; 2024 Enhanced Agentic Interview Preparation System. All rights reserved.</p> -->
+        <p>
+          &copy; <span id="year"></span> Enhanced Agentic Interview Preparation
+          System. All rights reserved.
+        </p>
       </div>
     </div>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
