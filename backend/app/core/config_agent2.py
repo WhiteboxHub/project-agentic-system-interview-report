@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 
 # Load environment variables from .env
 load_dotenv()
+# load_dotenv(encoding="utf-8")
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 

@@ -1,108 +1,94 @@
 {
     "BASIC_INFORMATION": {
-        "Job_Title": "LLM/Agent Developer",
-        "Company_Name": "Prophecy",
+        "Job_Title": "Senior Staff AI Engineer",
+        "Company_Name": "Palo Alto Networks",
         "Location": {
-            "City": "Not specified",
-            "State": "Not specified",
-            "Country": "Not specified",
-            "Remote": "Not specified"
+            "City": "",
+            "State": "",
+            "Country": "United States of America",
+            "Remote": "onsite with flexibility"
         },
-        "Experience_Level": "Mid to Staff Level",
-        "Employment_Type": "Full-time",
-        "Salary_Range": "$250,000–$350,000"
+        "Experience_Level": "senior/staff",
+        "Employment_Type": "full-time",
+        "Salary_Range": "$151000/YR - $246500/YR"
     },
     "TECHNICAL_REQUIREMENTS": {
         "Required_Skills": [
-            "Hands-on LLM/agent building",
-            "Tuning to quality benchmarks",
-            "Semantic search",
-            "RAG",
-            "Vector databases",
-            "Prompt engineering and optimization",
-            "Fluency in Python",
-            "REST APIs",
-            "Microservices in public cloud"
+            "Python",
+            "Java",
+            "Go",
+            "TensorFlow",
+            "PyTorch"
         ],
         "Nice_to_Have_Skills": [
-            "ML/LLM work in code generation",
-            "Semantic extraction",
-            "Knowledge graphs",
-            "Experience with big-data engines like Spark",
-            "Compiler development for languages like SQL, Python, or Scala",
-            "Optimization of ML models for low-latency, high-throughput production use",
-            "Contributions to open-source AI/ML projects",
-            "Expertise in retrieval systems or vector databases",
-            "Skill in evaluating tech and driving build/buy decisions"
+            "Experience contributing to open-source AI projects",
+            "Familiarity with cybersecurity principles as they apply to AI systems"
         ],
-        "Tools_Technologies": [
-            "LangChain",
-            "Graph",
-            "CrewAI",
-            "Weaviate",
-            "Pinecone",
-            "Neo4j",
-            "Neptune"
+        "Tools_and_Technologies": [
+            "AWS SageMaker",
+            "Google Cloud AI",
+            "Azure ML"
         ],
-        "Certifications_Required": "None specified",
-        "Years_of_Experience_Required": "3+ years"
+        "Certifications_Required": [],
+        "Years_of_Experience_Required": "8+ years in software engineering, with 4+ years in AI/ML solutions or platform development"
     },
     "ROLE_DETAILS": {
         "Key_Responsibilities": [
-            "Building and deploying agents for various use cases",
-            "Automating multi-step processes",
-            "Developing or debugging code autonomously",
-            "Querying, manipulating, or analyzing data",
-            "Tailoring recommendations or plans",
-            "Real-time decision-making in specific domains",
-            "Generating text, art, or media",
-            "Collaborating in multi-agent systems"
+            "Lead the design and implementation of AI solutions",
+            "Develop and implement core components of the enterprise AI/ML platform",
+            "Design and optimize large-scale AI/ML systems",
+            "Evaluate and integrate new AI tools and frameworks",
+            "Champion design standards and best practices for AI systems",
+            "Mentor AI/ML engineers and lead design discussions",
+            "Partner with Data Scientists, ML Engineers, Product Managers, and IT stakeholders",
+            "Ensure AI systems comply with responsible AI principles and security policies",
+            "Apply cutting-edge AI/ML techniques to solve problems"
         ],
-        "Daily_Tasks": "Not explicitly mentioned",
-        "Team_Structure": "Not explicitly mentioned",
-        "Reporting_Structure": "Not explicitly mentioned",
-        "Growth_Opportunities": "End-to-end ownership of projects"
+        "Daily_Tasks": [],
+        "Team_Structure": [
+            "Principal and Distinguished Architects",
+            "Data Scientists",
+            "ML Engineers",
+            "Product Managers",
+            "IT stakeholders"
+        ],
+        "Reporting_Structure": "",
+        "Growth_Opportunities": "Contributing to the overall excellence of the AI platform and leading significant technical initiatives"
     },
     "COMPANY_INFORMATION": {
-        "Company_Size": "Not specified",
-        "Industry": "Data Integration, AI, Analytics",
-        "Company_Culture_Values": "Inclusive culture, merit-based hiring",
-        "Mission_Statement": "To simplify and automate data preparation for AI and analytics",
-        "Benefits_Perks": [
-            "99% coverage of employee health insurance",
-            "75% coverage for dependents",
-            "$200/month wellness reimbursement",
-            "Birthday and anniversary day off",
-            "Flexible PTO",
-            "$500 professional development reimbursement",
-            "Company sponsored Long Term Disability and Life Insurance",
-            "FSA/HSA"
+        "Company_Size": "",
+        "Industry": "Cybersecurity",
+        "Company_Culture_and_Values": "Disruptive innovation, collaboration, integrity, inclusion",
+        "Mission_Statement": "Being the cybersecurity partner of choice, protecting our digital way of life.",
+        "Benefits_and_Perks": [
+            "FLEXBenefits wellbeing spending account",
+            "Mental and financial health resources",
+            "Personalized learning opportunities"
         ],
-        "Work_Environment": "Innovative platform with a focus on ownership and contribution"
+        "Work_Environment": "Collaborative, fast-paced, with a focus on in-person interactions"
     },
     "INTERVIEW_PREPARATION_INSIGHTS": {
         "Likely_Technical_Interview_Topics": [
-            "LLM/agent building",
-            "Data integration techniques",
-            "Prompt engineering",
-            "Semantic search"
+            "AI solution design and implementation",
+            "AI/ML frameworks and tools",
+            "Distributed systems and real-time decision engines"
         ],
-        "Behavioral_Questions_to_Expect": "Not explicitly mentioned",
+        "Behavioral_Questions_to_Expect": [],
         "Skills_Assessment_Areas": [
-            "Programming proficiency",
-            "Problem-solving abilities",
-            "Experience with relevant tools and technologies"
+            "Problem-solving skills",
+            "Technical leadership and mentoring",
+            "System-level thinking"
         ],
-        "Portfolio_Project_Requirements": "Not explicitly mentioned",
-        "Key_Metrics_KPIs_for_Success": "Not explicitly mentioned"
+        "Portfolio_Project_Requirements": [],
+        "Key_Metrics_KPIs_for_Success": []
     },
     "CANDIDATE_PROFILE": {
-        "Ideal_Candidate_Description": "Versatile software developer with a builder mentality",
-        "Educational_Requirements": "Not specified",
-        "Soft_Skills_Needed": "Not specified",
-        "Leadership_Requirements": "Not specified",
-        "Communication_Skills": "Not specified"
+        "Ideal_Candidate_Description": "A highly skilled and passionate AI engineer who thrives on solving challenging problems and building robust, impactful solutions.",
+        "Educational_Requirements": "Bachelor's or Master's degree in Computer Science or related field",
+        "Soft_Skills_Needed": [],
+        "Leadership_Requirements": "Natural technical leader and mentor",
+        "Communication_Skills": "Excellent communication skills"
     },
     "scraped_at": "",
-    "source_url": "https://job-boards.greenhouse.io/prophecysimpledatalabs/jobs/4876131007"
+    "source_url": "https://jobs.smartrecruiters.com/PaloAltoNetworks2/744000082470125-senior-staff-ai-engineer"
 }

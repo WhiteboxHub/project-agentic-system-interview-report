@@ -99,7 +99,7 @@ python3 -m backend.app.agents.enhanced_comprehensive_agent
 The enhanced comprehensive agent provides the full workflow:
 
 ```bash
-python3 -m backend.app.agents.enhanced_comprehensive_agent
+python or python3 -m backend.app.agents.enhanced_comprehensive_agent
 ```
 
 **Input prompts:**
@@ -201,7 +201,7 @@ Key dependencies include:
 - `python-docx` - DOCX file processing
 - `jinja2` - HTML template engine
 
-## 🐳 Docker Support
+## 🐳 Docker Support ( need to implement this part )
 
 The project includes Docker configuration for containerized deployment:
 
@@ -245,17 +245,7 @@ docker-compose up --build
 
 Enable detailed logging by checking log files in `backend/logs/`
 
-## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
@@ -263,16 +253,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - BeautifulSoup for web scraping capabilities
 - Docling for document processing
 - The open-source community for various Python libraries
-
-## 📞 Support
-
-For support, email support@whiteboxhub.com or create an issue in this repository.
-
-## 🔗 Links
-
-- [GitHub Repository](https://github.com/WhiteboxHub/project-agentic-system-interview-report)
-- [Documentation](https://github.com/WhiteboxHub/project-agentic-system-interview-report/wiki)
-- [Issues](https://github.com/WhiteboxHub/project-agentic-system-interview-report/issues)
 
 ---
 

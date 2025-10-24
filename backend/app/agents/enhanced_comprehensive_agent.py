@@ -4,6 +4,7 @@
 import os
 import json
 import re
+from datetime import datetime
 from openai import OpenAI
 from backend.app.core.config_agent2 import (
     OPENAI_API_KEY,
@@ -303,8 +304,15 @@ def generate_html_report(job_analysis: dict, resume_analysis: dict) -> str:
         # Create Jinja2 template
         template = Template(template_content)
 
+        # Get current datetime
+        current_datetime = datetime.now().strftime("%B %d, %Y at %I:%M %p")
+
         # Render the template
-        html_content = template.render(job=job_analysis, resume=resume_analysis)
+        html_content = template.render(
+            job=job_analysis, 
+            resume=resume_analysis, 
+            current_datetime=current_datetime
+        )
 
         return html_content
 

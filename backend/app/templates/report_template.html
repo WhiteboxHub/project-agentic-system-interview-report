@@ -260,7 +260,17 @@
           <tr>
             <td>{{ skill }}</td>
             <td>{{ status }}</td>
-            <td>Assessment notes</td>
+            <td>
+              {% if status == "match" %}
+                Strong match - highlight this skill in your responses
+              {% elif status == "partial" %}
+                Partial match - be prepared to discuss your experience level
+              {% elif status == "missing" %}
+                Skill gap - prepare to discuss how you would learn this quickly
+              {% else %}
+                {{ status }}
+              {% endif %}
+            </td>
           </tr>
           {% endfor %}
         </table>
@@ -282,21 +292,19 @@
         <div class="highlight">
           <p>
             {{ resume.get("PERSONALIZED_INTRODUCTION_STRATEGY",
-            {}).get("30-Second_Elevator_Pitch_Template", "Template not
-            available") }}
+            {}).get("30_Second_Elevator_Pitch_Template", "Template not available") }}
           </p>
         </div>
 
         <h3>2-Minute Detailed Introduction</h3>
         <p>
-          {{ resume.get("PERSONALIZED INTRODUCTION STRATEGY", {}).get("2-Minute
-          Detailed Introduction", "Detailed introduction not available") }}
+          {{ resume.get("PERSONALIZED_INTRODUCTION_STRATEGY", {}).get("2_Minute_Detailed_Introduction", "Detailed introduction not available") }}
         </p>
 
         <h3>Key Value Propositions</h3>
         <ul>
-          {% for prop in resume.get("PERSONALIZED INTRODUCTION STRATEGY",
-          {}).get("Key Value Propositions to Highlight", []) %}
+          {% for prop in resume.get("PERSONALIZED_INTRODUCTION_STRATEGY",
+          {}).get("Key_Value_Propositions_to_Highlight", []) %}
           <li>{{ prop }}</li>
           {% endfor %}
         </ul>
@@ -308,24 +316,22 @@
 
         <h3>Skills to Brush Up On</h3>
         <ul>
-          {% for skill in resume.get("TECHNICAL PREPARATION", {}).get("Technical
-          Skills to Brush Up On", []) %}
+          {% for skill in resume.get("TECHNICAL_PREPARATION", {}).get("Technical_Skills_to_Brush_Up_On", []) %}
           <li>{{ skill }}</li>
           {% endfor %}
         </ul>
 
         <h3>Coding Challenges to Practice</h3>
         <ul>
-          {% for challenge in resume.get("TECHNICAL PREPARATION",
-          {}).get("Coding Challenges to Practice", []) %}
+          {% for challenge in resume.get("TECHNICAL_PREPARATION",
+          {}).get("Coding_Challenges_to_Practice", []) %}
           <li>{{ challenge }}</li>
           {% endfor %}
         </ul>
 
         <h3>System Design Topics</h3>
         <ul>
-          {% for topic in resume.get("TECHNICAL PREPARATION", {}).get("System
-          Design Topics", []) %}
+          {% for topic in resume.get("TECHNICAL_PREPARATION", {}).get("System_Design_Topics", []) %}
           <li>{{ topic }}</li>
           {% endfor %}
         </ul>
@@ -339,16 +345,16 @@
           <div class="column">
             <h3>Technical Questions</h3>
             <ul>
-              {% for q in resume.get("INTERVIEW QUESTIONS BANK",
-              {}).get("Technical Questions", []) %}
+              {% for q in resume.get("INTERVIEW_QUESTIONS_BANK",
+              {}).get("Technical_Questions", []) %}
               <li>{{ q }}</li>
               {% endfor %}
             </ul>
 
             <h3>Behavioral Questions</h3>
             <ul>
-              {% for q in resume.get("INTERVIEW QUESTIONS BANK",
-              {}).get("Behavioral Questions", []) %}
+              {% for q in resume.get("INTERVIEW_QUESTIONS_BANK",
+              {}).get("Behavioral_Questions", []) %}
               <li>{{ q }}</li>
               {% endfor %}
             </ul>
@@ -357,16 +363,16 @@
           <div class="column">
             <h3>Company-Specific Questions</h3>
             <ul>
-              {% for q in resume.get("INTERVIEW QUESTIONS BANK",
-              {}).get("Company-Specific Questions", []) %}
+              {% for q in resume.get("INTERVIEW_QUESTIONS_BANK",
+              {}).get("Company_Specific_Questions", []) %}
               <li>{{ q }}</li>
               {% endfor %}
             </ul>
 
             <h3>Role-Specific Questions</h3>
             <ul>
-              {% for q in resume.get("INTERVIEW QUESTIONS BANK",
-              {}).get("Role-Specific Questions", []) %}
+              {% for q in resume.get("INTERVIEW_QUESTIONS_BANK",
+              {}).get("Role_Specific_Questions", []) %}
               <li>{{ q }}</li>
               {% endfor %}
             </ul>
@@ -382,16 +388,16 @@
           <div class="column">
             <h3>Technical Questions</h3>
             <ul>
-              {% for q in resume.get("QUESTIONS TO ASK INTERVIEWER",
-              {}).get("Technical Questions", []) %}
+              {% for q in resume.get("QUESTIONS_TO_ASK_INTERVIEWER",
+              {}).get("Technical_Questions", []) %}
               <li>{{ q }}</li>
               {% endfor %}
             </ul>
 
             <h3>Team & Culture Questions</h3>
             <ul>
-              {% for q in resume.get("QUESTIONS TO ASK INTERVIEWER",
-              {}).get("Team & Culture Questions", []) %}
+              {% for q in resume.get("QUESTIONS_TO_ASK_INTERVIEWER",
+              {}).get("Team_Culture_Questions", []) %}
               <li>{{ q }}</li>
               {% endfor %}
             </ul>
@@ -400,16 +406,16 @@
           <div class="column">
             <h3>Growth & Development Questions</h3>
             <ul>
-              {% for q in resume.get("QUESTIONS TO ASK INTERVIEWER",
-              {}).get("Growth & Development Questions", []) %}
+              {% for q in resume.get("QUESTIONS_TO_ASK_INTERVIEWER",
+              {}).get("Growth_Development_Questions", []) %}
               <li>{{ q }}</li>
               {% endfor %}
             </ul>
 
             <h3>Role-Specific Questions</h3>
             <ul>
-              {% for q in resume.get("QUESTIONS TO ASK INTERVIEWER",
-              {}).get("Role-Specific Questions", []) %}
+              {% for q in resume.get("QUESTIONS_TO_ASK_INTERVIEWER",
+              {}).get("Role_Specific_Questions", []) %}
               <li>{{ q }}</li>
               {% endfor %}
             </ul>
@@ -423,16 +429,15 @@
 
         <h3>Technical Keywords</h3>
         <ul>
-          {% for keyword in resume.get("KEYWORDS & PHRASES", {}).get("Technical
-          Keywords to Use", []) %}
+          {% for keyword in resume.get("KEYWORDS_PHRASES", {}).get("Technical_Keywords_to_Use", []) %}
           <li>{{ keyword }}</li>
           {% endfor %}
         </ul>
 
         <h3>Industry-Specific Terms</h3>
         <ul>
-          {% for term in resume.get("KEYWORDS & PHRASES",
-          {}).get("Industry-Specific Terms", []) %}
+          {% for term in resume.get("KEYWORDS_PHRASES",
+          {}).get("Industry_Specific_Terms", []) %}
           <li>{{ term }}</li>
           {% endfor %}
         </ul>
@@ -445,8 +450,8 @@
         <div class="warning">
           <h3>Potential Weaknesses to Address</h3>
           <ul>
-            {% for weakness in resume.get("RED FLAGS & CONCERNS",
-            {}).get("Potential Weaknesses to Address", []) %}
+            {% for weakness in resume.get("RED_FLAGS_CONCERNS",
+            {}).get("Potential_Weaknesses_to_Address", []) %}
             <li>{{ weakness }}</li>
             {% endfor %}
           </ul>
@@ -454,8 +459,7 @@
 
         <h3>Gaps to Explain Proactively</h3>
         <ul>
-          {% for gap in resume.get("RED FLAGS & CONCERNS", {}).get("Gaps to
-          Explain Proactively", []) %}
+          {% for gap in resume.get("RED_FLAGS_CONCERNS", {}).get("Gaps_to_Explain_Proactively", []) %}
           <li>{{ gap }}</li>
           {% endfor %}
         </ul>
@@ -467,16 +471,14 @@
 
         <h3>Interview Day Preparation</h3>
         <ul>
-          {% for strategy in resume.get("SUCCESS STRATEGIES", {}).get("Interview
-          Day Preparation", []) %}
+          {% for strategy in resume.get("SUCCESS_STRATEGIES", {}).get("Interview_Day_Preparation", []) %}
           <li>{{ strategy }}</li>
           {% endfor %}
         </ul>
 
         <h3>Body Language Tips</h3>
         <ul>
-          {% for tip in resume.get("SUCCESS STRATEGIES", {}).get("Body Language
-          Tips", []) %}
+          {% for tip in resume.get("SUCCESS_STRATEGIES", {}).get("Body_Language_Tips", []) %}
           <li>{{ tip }}</li>
           {% endfor %}
         </ul>
@@ -488,16 +490,15 @@
 
         <h3>Recent Company News</h3>
         <ul>
-          {% for news in resume.get("COMPANY RESEARCH POINTS", {}).get("Recent
-          Company News", []) %}
+          {% for news in resume.get("COMPANY_RESEARCH_POINTS", {}).get("Recent_Company_News", []) %}
           <li>{{ news }}</li>
           {% endfor %}
         </ul>
 
         <h3>Products/Services to Mention</h3>
         <ul>
-          {% for product in resume.get("COMPANY RESEARCH POINTS",
-          {}).get("Products/Services to Mention", []) %}
+          {% for product in resume.get("COMPANY_RESEARCH_POINTS",
+          {}).get("Products_Services_to_Mention", []) %}
           <li>{{ product }}</li>
           {% endfor %}
         </ul>
@@ -509,24 +510,25 @@
 
         <h3>Daily Responsibilities Understanding</h3>
         <ul>
-          {% for resp in resume.get("ROLE-SPECIFIC PREPARATION", {}).get("Daily
-          Responsibilities Understanding", []) %}
+          {% for resp in resume.get("ROLE_SPECIFIC_PREPARATION", {}).get("Daily_Responsibilities_Understanding", []) %}
           <li>{{ resp }}</li>
           {% endfor %}
         </ul>
 
         <h3>Tools & Processes to Learn</h3>
         <ul>
-          {% for tool in resume.get("ROLE-SPECIFIC PREPARATION", {}).get("Tools
-          & Processes to Learn", []) %}
+          {% for tool in resume.get("ROLE_SPECIFIC_PREPARATION", {}).get("Tools_Processes_to_Learn", []) %}
           <li>{{ tool }}</li>
           {% endfor %}
         </ul>
       </div>
 
       <div class="small">
-        <p>Generated with Enhanced Agentic Interview Preparation System</p>
-        <p>Report generated on: {{ job.get("scraped_at", "N/A") }}</p>
+        <p><strong>Generated with Enhanced Agentic Interview Preparation System</strong></p>
+        <p><em>Developed by Hemant and Jafar</em></p>
+        <p>Report generated on: {{ current_datetime }}</p>
+        <p>Job scraped on: {{ job.get("scraped_at", "N/A") }}</p>
+        <p>&copy; 2024 Enhanced Agentic Interview Preparation System. All rights reserved.</p>
       </div>
     </div>
   </body>
